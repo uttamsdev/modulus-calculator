@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,39 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
-    <select name="" id="selectbox">
-        <option value="Select M*N" disabled selected>Select M*N</option>
-        <option value="3*3">3*3</option>
-        <option value="5*5">5*5</option>
-        <option value="7*7">7*7</option>
-    </select>
-    <input type="number" name="" id="x" placeholder="x = ?...">
-
-    <div id="inputs" style="display: grid;">   
-
+    <div class="title">
+        <h1>Modulus Finding Calculator</h1>
     </div>
-    <button id="btn">Calculate</button>
-    <table id="table">
+    <div class="container">
+        <div class="inner-container">
+        
+            <div class="select-items">
+                <select name="" id="selectbox">
+                    <option value="Select M*N" disabled selected>Select M*N</option>
+                    <option value="3*3">3*3</option>
+                    <option value="5*5">5*5</option>
+                    <option value="7*7">7*7</option>
+                </select>
+                <input type="number" name="" id="x" placeholder="x = ?...">
+            </div>
+        
+            <div id="inputs" style="display: grid;">
+        
+            </div>
+            <button id="btn">Calculate</button>
+            <h2 id="result-text"></h2>
+            <div class="result-container">
+                
+                <table id="table">
+                
+                </table>
+            </div>
+        </div>
+    </div>
 
-    </table>
-    
     <script src="js/app.js"></script>
 </body>
+
 </html>
