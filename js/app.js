@@ -28,12 +28,15 @@ document.getElementById('btn').addEventListener('click',()=>{
 
 
     const table = document.getElementById('table');
+    table.innerHTML = '';
+    table.style.gridTemplateColumns = `repeat(${result},100px)`
     for(let i = 1; i <= result*result; i++){
         let indexValue = document.getElementById(i).value;
         const evalResult = eval(indexValue);
         const tr = document.createElement('tr');
+        tr.className = "table-row";
         tr.innerHTML = `
-        <td>${evalResult}</td>
+        <td style="border:1px solid black";padding:10px;>${evalResult}</td>
         `;
 
         table.appendChild(tr);
