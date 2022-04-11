@@ -10,11 +10,12 @@ document.getElementById("selectbox").addEventListener("click", () => {
   console.log(select);
   const res = select.split('*');
   const result = res[0];
+  const result2 = res[1];
   console.log(result);
 
  
-  for(let i = 1; i <= result*result; i++){
-      inputs.style.gridTemplateColumns = `repeat(${result},1fr)`;
+  for(let i = 1; i <= result*result2; i++){
+      inputs.style.gridTemplateColumns = `repeat(${result2},1fr)`;
     const input = document.createElement('input');
     input.setAttribute('id',i);
     inputs.appendChild(input);
@@ -28,14 +29,17 @@ document.getElementById('btn').addEventListener('click',()=>{
     const x = parseInt(xValue);
     const res = select.split("*");
     const result = res[0];
+    const result2 = res[1];
 
+    console.log('res 1', result);
+    console.log('res 2 ',result2);
 
     const table = document.getElementById('table');
     table.style.backgroundColor = "rgba(255, 86, 56, 0.43)";
     table.style.boxShadow = 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px';
     table.innerHTML = '';
-    table.style.gridTemplateColumns = `repeat(${result},100px)`
-    for(let i = 1; i <= result*result; i++){
+    table.style.gridTemplateColumns = `repeat(${result2},100px)`
+    for(let i = 1; i <= result*result2; i++){
         let indexValue = document.getElementById(i).value;
         const evalResult = eval(indexValue);
         const xx = evalResult.toFixed(3)
@@ -49,7 +53,7 @@ document.getElementById('btn').addEventListener('click',()=>{
 
         // console.log(eval(indexValue));
         
-        console.log(evalResult);
+        // console.log(evalResult);
     }
 
 })
