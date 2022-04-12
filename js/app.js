@@ -4,20 +4,17 @@ document.getElementById("selectbox").addEventListener("click", () => {
      document.getElementById('table').innerHTML = '';
      document.getElementById("result-text").innerText = '';
 
-  console.log('test');
-
   const select = document.getElementById('selectbox').value;
-  console.log(select);
   const res = select.split('*');
   const result = res[0];
   const result2 = res[1];
-  // console.log(result);
 
  
   for(let i = 1; i <= result*result2; i++){
-      inputs.style.gridTemplateColumns = `repeat(${result2},1fr)`;
+    inputs.style.gridTemplateColumns = `repeat(${result2},1fr)`;
     const input = document.createElement('input');
     input.setAttribute('id',i);
+    input.value = "(x+1)%256";
     inputs.appendChild(input);
   }
 });
@@ -39,11 +36,10 @@ document.getElementById('btn').addEventListener('click',()=>{
     for(let i = 1; i <= result*result2; i++){
         let indexValue = document.getElementById(i).value;
         if(indexValue === ''){
-          alert('Enter all input filed to get full result.....');
+          alert('Enter all input fields to get full result.....');
           return;
         }
         const evalResult = eval(indexValue);
-        // const xx = evalResult.toFixed(3)
         const tr = document.createElement('tr');
         tr.className = "table-row";
         tr.innerHTML = `
